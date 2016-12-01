@@ -8,9 +8,9 @@
   dependencies:
     "@types/node" "*"
 
-"@types/node@*":
-  version "6.0.51"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.51.tgz#84cbf25111516ec9304d0b61469dc0fa9d12ba32"
+"@types/node@*", "@types/node@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-0.0.2.tgz#0da4934902fbf68a97a0f53204a35ad2224917bc"
 
 "@types/restify@^2.0.35":
   version "2.0.35"
@@ -287,6 +287,10 @@ readable-stream@^2.0.1:
     string_decoder "~0.10.x"
     util-deprecate "~1.0.1"
 
+restify-cors@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/restify-cors/-/restify-cors-1.0.1.tgz#4ecc6782b2318cbd94a65f8eec62fa7127059583"
+
 restify@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/restify/-/restify-4.3.0.tgz#03b67960d1d42a6dafcde3bd82fb882173a27678"
@@ -362,6 +366,10 @@ string_decoder@~0.10.x:
 tunnel-agent@^0.4.0:
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/tunnel-agent/-/tunnel-agent-0.4.3.tgz#6373db76909fe570e08d73583365ed828a74eeeb"
+
+typescript@next:
+  version "2.2.0-dev.20161201"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.2.0-dev.20161201.tgz#14b7a5b09d591aaf91ebabac27fac44830bcc6c4"
 
 util-deprecate@~1.0.1:
   version "1.0.2"

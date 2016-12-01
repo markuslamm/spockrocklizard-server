@@ -7,7 +7,14 @@
   "author": "Markus Lamm",
   "license": "MIT",
   "dependencies": {
+    "@types/node": "^0.0.2",
     "@types/restify": "^2.0.35",
-    "restify": "^4.3.0"
+    "restify": "^4.3.0",
+    "restify-cors": "^1.0.1",
+    "typescript": "next"
+  },
+  "scripts": {
+    "compile": "node_modules/.bin/tsc",
+    "start": "node build/index.js"
   }
 }
