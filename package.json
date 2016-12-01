@@ -7,6 +7,7 @@
   "author": "Markus Lamm",
   "license": "MIT",
   "dependencies": {
+    "@types/restify": "^2.0.35",
     "restify": "^4.3.0"
   }
 }
