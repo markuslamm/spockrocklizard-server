@@ -1,0 +1,9 @@
+{
+  "name": "spockrocklizard-node-server",
+  "version": "0.0.1",
+  "description": "node.js API for spockrocklizard game",
+  "main": "index.js",
+  "repository": "https://github.com/markuslamm/spockrocklizard-server",
+  "author": "Markus Lamm",
+  "license": "MIT"
+}
