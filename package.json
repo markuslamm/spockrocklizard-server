@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "https://github.com/markuslamm/spockrocklizard-server",
   "author": "Markus Lamm",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "restify": "^4.3.0"
+  }
 }
