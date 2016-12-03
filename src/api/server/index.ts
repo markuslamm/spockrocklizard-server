@@ -8,24 +8,23 @@ export default class RestServer {
     private port: number;
 
     constructor(port: number) {
-        this.server = restify.createServer();
         this.port = port;
-        this.init();
-        this.createRoutes();
+        this.server = this.init(restify.createServer());
     }
 
-    private init(): void {
-        this.server.use(restify.queryParser());
-        this.server.use(restify.bodyParser());
-        this.server.use(restify.gzipResponse());
-        this.server.use(restify.fullResponse());
-        this.server.use(restify.acceptParser(this.server.acceptable));
-        this.server.use(restify.dateParser());
+    private init(server: restify.Server): restify.Server {
+        server.use(restify.queryParser());
+        server.use(restify.bodyParser());
+        server.use(restify.gzipResponse());
+        server.use(restify.fullResponse());
+        server.use(restify.acceptParser(server.acceptable));
+        server.use(restify.dateParser());
+        return this.createRoutes(server);
     }
 
-    private createRoutes(): void {
+    private createRoutes(server: restify.Server): restify.Server {
         const GET_PATH: string = '/api/game';
-        this.server.get(GET_PATH, (req: restify.Request, res: restify.Response, next: restify.Next) => {
+        server.get(GET_PATH, (req: restify.Request, res: restify.Response, next: restify.Next) => {
                 console.log('Pre GET /, maybe authorize...')
                 return next();
             }, (req: restify.Request, res: restify.Response, next: restify.Next) => {
@@ -34,20 +33,21 @@ export default class RestServer {
             });
 
         const GET_PARAM_PATH: string = '/api/game/:pathvar';
-        this.server.get(GET_PARAM_PATH, (req: restify.Request, res: restify.Response, next: restify.Next) => {
+        server.get(GET_PARAM_PATH, (req: restify.Request, res: restify.Response, next: restify.Next) => {
             res.send({request: `GET / ${req.params.pathvar}`});
             return next();
         });
 
         const POST_PATH: string = '/api/game';
-        this.server.post(POST_PATH, (req: restify.Request, res: restify.Response, next: restify.Next) => {
+        server.post(POST_PATH, (req: restify.Request, res: restify.Response, next: restify.Next) => {
             return next(new restify.MethodNotAllowedError("POST not implemented yet"));
         });
 
         const PUT_PATH: string = '/api/game';
-        this.server.put(PUT_PATH, (req: restify.Request, res: restify.Response, next: restify.Next) => {
+        server.put(PUT_PATH, (req: restify.Request, res: restify.Response, next: restify.Next) => {
             return next(new restify.MethodNotAllowedError("PUT not implemented yet"));
         });
+        return server;
     }
 
     public start(): void {
